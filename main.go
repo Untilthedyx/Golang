@@ -1,9 +1,17 @@
 package main
 
-import "github.com/test/init_project/task"
+import (
+	"fmt"
+
+	"github.com/test/init_project/task"
+)
 
 func main() {
-	var a *task.A
 
-	a.singlenumber([]int{1, 2, 3, 4, 5})
+	fmt.Println(task.Singlenumber([]int{4, 4, 6, 6, 8}))
 }
+
+// func main() {
+
+// 	task.Rint()
+// }

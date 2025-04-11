@@ -5,31 +5,29 @@ package task
 
 import "fmt"
 
-type A struct{}
+func Singlenumber(nums []int) string {
+	resultmap := make(map[int]int)
+	// var resultmap map[int]int
+	for _, e := range nums {
 
-func (a *A) singlenumber(nums []int) int {
-	result :=0
-	resultmap:=make(map[int]int)
-	for i,e =range nums{
-		if_,ok=resultmap[e];ok{
-           resultmap[e]++
-
-		}
-		else {
-			resultmap[e]:=1
-		}
+		resultmap[e]++
 	}
-	for i=range resultmap{
-		if resultmap[i]==1{
-			return i
-		}
-	}
+	for i := range resultmap {
+		if resultmap[i] == 1 {
 
-	
+			fmt.Printf("%d", i)
+			return "结果如上"
+		}
+
+	}
+	return "非空数组不合题意"
 
 }
-// func rint() {
-// 	fmt.Println("hello world")
+
+// func Rint() {
+// 	resultmap := make(map[int]int)
+// 	fmt.Printf("%d", resultmap[1])
 // }
+
 // resultmap := make(map[int]int)
 // 	fmt.Printf("%d", resultmap[1])
