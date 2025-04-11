@@ -15,12 +15,12 @@ func Singlenumber(nums []int) string {
 	for i := range resultmap {
 		if resultmap[i] == 1 {
 
-			fmt.Printf("%d", i)
-			return "结果如上"
+			fmt.Printf("task1结果:%d\n", i)
+			return "============="
 		}
 
 	}
-	return "非空数组不合题意"
+	return "task1:非空数组不合题意"
 
 }
 
