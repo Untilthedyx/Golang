@@ -6,3 +6,23 @@
 // boolean book(int start, int end) 如果可以将日程安排成功添加到日历中而不会导致重复预订，返回 true ，否则，返回 false 并且不要将该日程安排添加到日历中。
 // 可以定义一个结构体来表示日程安排，包含 start 和 end 字段，然后使用一个切片来存储所有的日程安排，在 book 方法中，遍历切片中的日程安排，判断是否与要添加的日程安排有重叠。
 package task
+
+type Calendar struct {
+	Start int
+	End   int
+}
+type MyCalendar []Calendar
+
+func Constructor() MyCalendar {
+	return MyCalendar{}
+}
+
+func (this *MyCalendar) Book(startTime int, endTime int) bool {
+	for _, p := range *this {
+		if p.Start < endTime && p.End > startTime {
+			return false
+		}
+	}
+	*this = append(*this, Calendar{startTime, endTime})
+	return true
+}
